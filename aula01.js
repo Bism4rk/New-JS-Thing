@@ -1,0 +1,5 @@
+console.log('Alô, Mundo!')
+console.log('Essa linha está comentada')
+console.log('Essa também!')
+console.log('E essa também!')
+alert('Olá!')
