@@ -16,3 +16,4 @@ switch(colocacao){
         console.log(`Não subiu ao pódio`) 
         break      
 }
+
