@@ -32,6 +32,7 @@ const addPessoa = ()=>{
 btn_add.addEventListener('click', (evt)=>{
     const nome = document.querySelector('#f_nome')
     const idade = document.querySelector('#f_idade')
+    // const p = new Pessoa(nome.value, idade.value)
     Pessoa.setNome(nome.value)
     Pessoa.setIdade(idade.value)
     pessoas.push(Pessoa)
