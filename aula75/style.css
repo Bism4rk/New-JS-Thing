@@ -1,0 +1,20 @@
+*{
+    background-color: lawngreen;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.numero{
+    font-size: larger;
+}
+
+.ok{
+    color: blue;
+}
+
+.erro{
+    color: red;
+}
+
+button{
+    background-color: white;
+}
