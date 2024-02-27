@@ -14,18 +14,21 @@ let contato = {
             email:novoContato.email
         }
         contatos.push(cont)
-        const div = document.createElement('div')
-        div.setAttribute('class', 'contato')
-        const p_nome = document.createElement('p')
-        p_nome.innerHTML = novoContato.nome
-        const p_telefone = document.createElement('p')
-        p_telefone.innerHTML = novoContato.telefone
-        const p_mail = document.createElement('p')
-        p_mail.innerHTML = novoContato.email
-        div.appendChild(p_nome)
-        div.appendChild(p_telefone)
-        div.appendChild(p_mail)
-        destinoDOM.appendChild(div)
+        destinoDOM.innerHTML = ''
+        contatos.forEach((c)=>{
+            const div = document.createElement('div')
+            div.setAttribute('class', 'contato')
+            const p_nome = document.createElement('p')
+            p_nome.innerHTML = c.nome
+            const p_telefone = document.createElement('p')
+            p_telefone.innerHTML = c.telefone
+            const p_mail = document.createElement('p')
+            p_mail.innerHTML = c.email
+            div.appendChild(p_nome)
+            div.appendChild(p_telefone)
+            div.appendChild(p_mail)
+            destinoDOM.appendChild(div)
+        })
     }
 }
 
