@@ -1,5 +1,5 @@
 const long = document.getElementById('long')
-const lat = document.getElementById('lat')
+const lati = document.getElementById('lati')
 
 if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(mostrarLocalizacao, erroLocalizacao)
