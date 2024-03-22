@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="aula126.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Aula 126 de JavaScript</title>
+</head>
+<body>
+    <h1>Criando Gráficos com ChartJS</h1>
+
+    <div style="width: 800px; height: 400px;">
+      <canvas id="grafico1">
+          <!-- ah -->
+      </canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('grafico1');
+        let labelsX = ['Partido Azul', 'Partido Amarelo', 'Partido Verde', 'Partido Roxo']
+        let valores = [23, 15, 7, 5]
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labelsX, 
+            // ['Anthonyelson (PDM)', 'Josicreldo (PS)', 'Wanderdanson (POSTE)', 'Maurovic (PPSQMETNB)'],
+            datasets: [{
+              label: '# de votos',
+              data: valores,
+              // [27, 13, 6, 4],
+              backgroundColor: ['dodgerblue', 'goldenrod', 'lightgreen', 'palevioletred'],
+              borderColor: 'black',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+</body>
+</html>
