@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="aula128.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Aula 128 de JavaScript</title>
+</head>
+<body>
+    <h1>Criando Gráficos com ChartJS</h1>
+
+    <div style="width: 800px; height: 400px;">
+      <canvas id="grafico1">
+          <!-- ah -->
+      </canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('grafico1');
+        let labelsX = ['disponibilidade', 'qualidade', 'performance']
+        let valores = [0, 0, 0]
+        let grafico1 = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labelsX, 
+            // ['Anthonyelson (PDM)', 'Josicreldo (PS)', 'Wanderdanson (POSTE)', 'Maurovic (PPSQMETNB)'],
+            datasets: [{
+              label: 'Indicadores de 0 a 100',
+              data: valores,
+              // [27, 13, 6, 4],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        const obterDados=()=>{
+          const endpoint = 'https://705e50f0-49b2-4c61-886a-5f2d2e72c308-00-2p90etsk21awg.spock.replit.dev/'
+          fetch(endpoint)
+          .then(res=>res.json())
+          .then(res=>{
+            console.log(res);
+            valores[0] = res.disponibilidade
+            valores[1] = res.qualidade
+            valores[2] = res.performance
+            grafico1.update()
+          })
+          .catch(erro=>{
+            console.log('Erro! -' + erro)
+          })
+        }
+
+        const intervalo = setInterval(obterDados, 3000);
+      </script>
+</body>
+</html>
