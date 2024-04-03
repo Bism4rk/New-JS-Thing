@@ -1,3 +1,5 @@
+import { Cxmsg } from "./cxmsg.js";
+
 const timer = document.querySelector('#timer')
 const btn_iniciar = document.querySelector('#btn_iniciar')
 const btn_parar = document.querySelector('#btn_parar')
@@ -36,4 +38,8 @@ btn_parar.addEventListener('click', (evt)=>{
 btn_zerar.addEventListener('click', (evt)=>{
     tmpini = Date.now()
     timer.innerHTML = '00:00:00'
+    clearInterval(intervalo)
+    Cxmsg.cor = 'limegreen'
+    Cxmsg.mostrar('Cronômetro zerado', 'Cronômetro zerado com sucesso!')
+
 })
