@@ -229,7 +229,7 @@ class Login{
     }
 }
 
-export {Login};
+// export {Login};
 
 // https://cdn.jsdelivr.net/gh/bism4rck/aula150/login.js
 

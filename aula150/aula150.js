@@ -1,9 +1,7 @@
 import { Cxmsg } from "./cxmsg.js";
-import { Login } from "./login.js";
+// import { Login } from "./login.js";
 
-const callback_ok = ()=>{
-    // this.comando_sn = ()=>{config.comando_sn()}
-}
+const callback_ok = ()=>{}
 
 const callback_naook = ()=>{
     const config = {
