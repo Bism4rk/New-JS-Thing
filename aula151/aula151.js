@@ -18,4 +18,4 @@ const configlogin = {
     img: 'logo.png',
     endpoint: 'https://6573c537-7d92-4414-a2d0-76ec13fdfc3d-00-39qe15kjmc8b5.worf.replit.dev'
 }
-Login.login(null, callback_naook, configlogin)
+Login.login(callback_ok, callback_naook, configlogin)

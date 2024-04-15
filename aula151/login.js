@@ -173,6 +173,10 @@ class Login{
         btn_cancelar.setAttribute('class', 'btn_cancelar')
         btn_cancelar.innerHTML = 'Cancelar'
         btn_cancelar.addEventListener('click', ()=>{
+            sessionStorage.setItem('logado', 'false')
+            sessionStorage.setItem('matlogado', '')
+            sessionStorage.setItem('nomelogado', '')
+            sessionStorage.setItem('acessologado', '')
             this.fechar()
             alert('[na voz do do cara dos jingles da rádio globo] CANCELADO!')
         })
