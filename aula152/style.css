@@ -1,0 +1,11 @@
+*{
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
