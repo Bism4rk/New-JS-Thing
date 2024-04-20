@@ -3,8 +3,7 @@
         "id": "01",
         "produto": "Processador",
         "marca": "Intel",
-        "modelo": "i7",
-        "quantidade": "26"
+        "modelo": "i7"
         
     },
 
@@ -12,8 +11,7 @@
         "id": "02",
         "produto": "Mouse",
         "marca": "Logitech",
-        "modelo": "M90",
-        "quantidade": "21"
+        "modelo": "M90"
         
     },
 
@@ -21,8 +19,7 @@
         "id": "03",
         "produto": "Monitor",
         "marca": "Samsung",
-        "modelo": "SyncMaster",
-        "quantidade": "67"
+        "modelo": "SyncMaster"
         
     },
 
@@ -30,16 +27,13 @@
         "id": "04",
         "produto": "Impressora",
         "marca": "HP",
-        "modelo": "P1005",
-        "quantidade": "11"
-
+        "modelo": "P1005"
     },
 
     {
         "id": "05",
         "produto": "Teclado",
         "marca": "Multilaser",
-        "modelo": "TC93",
-        "quantidade": "45"
+        "modelo": "TC93"
     }
 ]
