@@ -1,0 +1,136 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 1px solid red; */
+}
+
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightgray; */
+    background-color: lightblue;
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid green; */
+}
+
+.aba{
+    background-color: rgb(6, 100, 168);
+    color: white;
+    /* text-transform: uppercase; */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    margin-right: 5px;
+}
+
+.abaSelecionada{
+    background-color: lightblue !important;
+    color: black;
+}
+
+.if_principal{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.btn_geral{
+    background-color: rgb(6, 100, 168);
+    color: white;
+    /* text-transform: uppercase; */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* janela novo */
+
+#novo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.elementosForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* align-items: center; */
+    width: 80%;
+    margin-top: 20px;
+}
+
+.campoForm{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.campoForm input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.botoesForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* end of novo */
+
+/* pesquisar */
+
+#pesquisa{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+}
+
+#campoPesq{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+input[type=text]{
+    /* border: 1px solid red; */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label{
+    margin-right: 5px;
+}
+
+/* end of pesquisar */
