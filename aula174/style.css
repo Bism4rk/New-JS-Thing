@@ -1,0 +1,320 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 1px solid red; */
+}
+
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightgray; */
+    background-color: lightblue;
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid green; */
+}
+
+.aba{
+    background-color: rgb(6, 100, 168);
+    color: white;
+    /* text-transform: uppercase; */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    margin-right: 5px;
+}
+
+.abaSelecionada{
+    background-color: lightblue !important;
+    color: black;
+}
+
+.if_principal{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.btn_geral{
+    background-color: rgb(6, 100, 168);
+    color: white;
+    /* text-transform: uppercase; */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* janela novo */
+
+#novo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.elementosForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* align-items: center; */
+    width: 80%;
+    margin-top: 20px;
+}
+
+.campoForm{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.campoForm input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.botoesForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* end of novo */
+
+/* pesquisar */
+
+#pesquisa{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+}
+
+#campoPesq{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+input[type=text]{
+    /* border: 1px solid red; */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label{
+    margin-right: 5px;
+}
+
+.dgv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1200px;
+}
+
+.resultado p{
+    margin-bottom: 5px;
+}
+
+.titulos{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    width: inherit;
+    background-color: rgb(6, 100, 168);
+    color: white;
+}
+
+.dados{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: inherit;
+}
+
+.linhaDados{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    width: inherit;
+    background-color: white;
+}
+
+.coluna, .titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black;
+    padding: 5px;
+}
+
+.coluna{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.c1p{
+    width: 5%;
+}
+
+.c2p{
+    width: 20%;
+}
+
+.c3p{
+    width: 15%;
+}
+
+.c4p{
+    width: 30%;
+}
+
+.c5p{
+    width: 30%;
+}
+
+.c1{
+    width: 5%;
+}
+
+.c2{
+    width: 20%;
+}
+
+.c3{
+    width: 15%;
+}
+
+.c4{
+    width: 20%;
+}
+
+.c5{
+    width: 20%;
+}
+
+.c6{
+    width: 20%;
+}
+
+.c_op{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* end of pesquisar */
+
+/* gestão */
+
+.iconeOp{
+    width: 8%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* end of gestão */
+
+/* popup */
+
+.fundopopup{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999999999999999999999999;
+}
+
+.janelapopup{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 500px;
+}
+
+.titulopopup{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(6, 100, 168);
+    color: white;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    width: inherit;
+}
+
+.principalpopup{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: inherit;
+    background-color: #ddd;
+    padding: 5px;
+}
+
+.rodapepopup{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-radius: 0px 0px 5px 5px;
+    width: inherit;
+    background-color: #aaa;
+    padding: 5px;
+}
+
+/* end of popup */
