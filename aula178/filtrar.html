@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Filtrar</title>
+</head>
+<body>
+    <div id="fundopopup" class="fundopopup ocultar">
+        <div id="janelapopup" class="janelapopup">
+            <div id="titulopopup" class="titulopopup">Editar Contato</div>
+            <div id="principalpopup" class="principalpopup">
+                <div class="campoForm">
+                    <label>ID</label>
+                    <input type="text" id="f_id" name="f_id" placeholder="ID" readonly style="cursor: not-allowed;">
+                </div>
+                <div class="campoForm">
+                    <label>Nome</label>
+                    <input type="text" id="f_nome" name="f_nome" placeholder="Nome">
+                </div>
+                <div class="campoForm">
+                    <label>Celular</label>
+                    <input type="text" id="f_celular" name="f_celular" placeholder="DDD1239456789">
+                </div>
+                <div class="campoForm">
+                    <label>E-mail</label>
+                    <input type="text" id="f_email" name="f_email" placeholder="abcd@wxyz.com">
+                </div>
+                <div class="campoForm">
+                    <label>Data de nascimento</label>
+                    <input type="text" id="f_dtnasc" name="f_dtnasc" placeholder="Ano-Mês-Dia">
+                </div>
+            </div>
+            <div id="rodapepopup" class="rodapepopup">
+                <button class="btn_geral" id="btn_gravar">Gravar</button>
+                <button class="btn_geral" id="btn_cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <h1>Filtrar</h1>
+
+    <div id="filtro" class="filtro">
+        <div class="campoForm">
+            <label>Nome</label>
+            <input type="text" id="f_filtronome" name="f_filtronome" placeholder="Nome">
+        </div>
+
+        <div class="campoForm">
+            <img src="filtrar.svg" class="iconefiltro" id="btn_filtrar">
+        </div>
+    </div>
+
+
+    <div id="dgv" class="dgv">
+        <div id="resultado" class="resultado">
+            <p>CONTATOS:</p>
+            <div id="titulos" class="titulos">
+                <div class="titulo c1">ID</div>
+                <div class="titulo c2">Nome</div>
+                <div class="titulo c3">Celular</div>
+                <div class="titulo c4">E-mail</div>
+                <div class="titulo c5">Data de nascimento</div>
+                <div class="titulo c6">Operações</div>
+            </div>
+            <div id="dados" class="dados">
+                <div class="linhaDados">
+                    <!-- <div class="coluna c1">id</div>
+                    <div class="coluna c2">nome</div>
+                    <div class="coluna c3">celular</div>
+                    <div class="coluna c4">email</div>
+                    <div class="coluna c5">data</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="filtrar.js"></script>
+</body>
+</html>
