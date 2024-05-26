@@ -1,0 +1,18 @@
+.menuPrincipal{
+    background-color: blue;
+    color: white;
+}
+
+.btn_menuPrincipal{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.TEMP{
+    background-color:mediumspringgreen;
+}
+
+.btn_menuItem{
+    background-color: hotpink;
+    cursor: pointer;
+}
