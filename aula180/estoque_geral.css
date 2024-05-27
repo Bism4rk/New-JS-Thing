@@ -1,0 +1,45 @@
+.menuPrincipal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: white;
+    width: 240px;
+    height: 100vh;
+}
+
+.ocultar{
+    left: -210px !important;
+}
+
+.menuItens{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgb(10, 51, 133);
+    height: 100vh;
+}
+
+.btn_menuItem{
+    background-color: rgb(95, 213, 249);
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px 15px;
+    width: 200px; 
+    border-radius: 5px;
+}
+
+.btn_menuPrincipal{
+    display: flex;
+    justify-content: center;
+    background-color: deepskyblue;
+    cursor: pointer;
+    width: 50px;
+}
+
+.btn_menuPrincipal img{
+    width: 40px;
+}
