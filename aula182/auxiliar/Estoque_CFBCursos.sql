@@ -10,7 +10,7 @@ CREATE TABLE `telefone` (
   `n_usuario_usuario` int,
   `s_ddd_telefone` varchar(255),
   `s_numero_telefone` varchar(255)
-);
+);      
 
 CREATE TABLE `tipousuario` (
   `n_tipousuario_tipousuario` int PRIMARY KEY AUTO_INCREMENT,
