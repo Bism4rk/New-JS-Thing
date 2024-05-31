@@ -1,0 +1,8 @@
+*{
+    background-color: green;
+    color: white;
+}
+
+body{
+    overflow: auto !important;
+}
