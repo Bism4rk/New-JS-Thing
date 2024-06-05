@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../estoque_geral.css">
+    <link rel="stylesheet" href="colaboradores.css">
+    <title>Colaboradores</title>
+</head>
+<body>
+    <h1>Colaboradores</h1>
+    <div id="topoJanela" class="topoJanela">
+        <div class="YOMAMA">Coringa</div>
+        <div>Colaboradores</div>
+        <div class="TEMP">
+            <div>
+                <img src="../imgs/adicionar.svg" alt="Adicionar" class="btn_mainOper" title="Adicionar novo colaborador">
+            </div>
+            <div>
+                <img src="../imgs/deletar.svg" alt="Deletar" class="btn_mainOper" title="Deletar um colaborador">
+            </div>
+            <div>
+                <img src="../imgs/editar.svg" alt="Editar" class="btn_mainOper" title="Editar um colaborador">
+            </div>
+        </div>
+    </div>
+
+    <div id="novoColaborador" class="popup">
+        <div class="janelaPopup">
+            <div class="tituloPopup">
+                <div>Novo Colaborador</div>
+                <img src="../imgs/fechar.svg" alt="Fechar" class="btn_janelaOper" id="btn_fechar">
+            </div>
+            <div class="corpoPopup">
+                Body
+            </div>
+            <div class="rodapePopup">
+                Footer
+            </div>
+        </div>
+    </div>
+
+    <div id="grid" class="grid">
+            <div class="tituloGrid" id="tituloGrid">
+                <div class="colunaTituloGrid c1">ID</div>
+                <div class="colunaTituloGrid c2">Nome</div>
+                <div class="colunaTituloGrid c3">Tipo</div>
+                <div class="colunaTituloGrid c4">Status</div>
+                <div class="colunaTituloGrid c5">Operações</div>
+            </div>
+            <div class="dadosGrid" id="dadosGrid">
+                <!-- <div class="linhaGrid">
+                    <div class="colunaLinhaGrid c1">ID</div>
+                    <div class="colunaLinhaGrid c2">Nome</div>
+                    <div class="colunaLinhaGrid c3">Tipo</div>
+                    <div class="colunaLinhaGrid c4">Status</div>
+                    <div class="colunaLinhaGrid c5">Operações</div>
+                </div> -->
+            </div>
+    </div>
+
+    <script src="../../estoque_geral.js"></script>
+    <script src="colaboradores.js"></script>
+</body>
+</html>
