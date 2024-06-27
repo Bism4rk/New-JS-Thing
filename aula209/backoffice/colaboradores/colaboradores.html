@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../estoque_geral.css">
+    <link rel="stylesheet" href="colaboradores.css">
+    <title>Colaboradores</title>
+</head>
+<body>
+    <h1>Colaboradores</h1>
+    <div id="topoJanela" class="topoJanela">
+        <!-- <div class="YOMAMA">Coringa</div>
+        <div>Colaboradores</div>
+        <div class="TEMP"> -->
+            <div>
+                <img src="../imgs/pesquisar.svg" alt="Pesquisar" class="btn_mainOper" id="btn_pesquisar" title="Pesquisar por colaborador">
+
+                <img src="../imgs/adicionar.svg" alt="Adicionar" class="btn_mainOper" id="btn_adicionar" title="Adicionar novo colaborador">
+            </div>
+        </div>
+    </div>
+
+    <div id="filtragem">
+        <div class="campoForm campoFiltragem">
+            <label class="LINSANITY">Filtrar por nome</label>
+            <input type="text" name="f_filtragem" id="f_filtragem" class="inputFiltragem">
+        </div>
+    </div>
+
+    <!-- ocultarPopup -->
+    <div id="pesquisa" class="popup ocultarPopup">
+        <div class="janelaPopup">
+            <div class="tituloPopup">
+                <div id="tituloPopup">Pesquisar</div>
+                <img src="../imgs/fechar.svg" alt="Fechar" class="btn_janelaOper" id="btn_fecharPopupPesq">
+            </div>
+            <div class="corpoPopup">
+                <div class="campoForm ASDF">
+                    <label>Tipo da pesquisa:</label>
+                    <div class="GABAGOOL">
+                        <div class="campoRadio">
+                            <input type="radio" name="f_pesqTipo" id="f_pesqID" checked>
+                            ID
+                        </div>
+                        <div class="campoRadio">
+                            <input type="radio" name="f_pesqTipo" id="f_pesqNome">
+                            Nome
+                        </div>
+                    </div>
+                </div>
+                <div class="campoForm">
+                    <label>Valor da pesquisa:</label>
+                    <input type="text" name="f_pesq" id="f_pesq">
+                </div>
+            </div>
+            <div class="rodapePopup">
+                <button id="btn_pesquisarPopup" class="btn_comandoPopup">Pesquisar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="novoColaborador" class="popup ocultarPopup">
+        <div class="janelaPopup">
+            <div class="tituloPopup">
+                <div id="tituloPopup">Novo Colaborador</div>
+                <img src="../imgs/fechar.svg" alt="Fechar" class="btn_janelaOper" id="btn_fecharPopup">
+            </div>
+            <div class="corpoPopup">
+                <div class="campoForm">
+                    <label>Nome:</label>
+                    <input type="text" id="f_nome" name="f_nome">
+                </div>
+                <div class="campoForm">
+                    <label>Tipo:</label>
+                    <select name="f_tipo" id="f_tipoColab">
+                        <option>teste</option>
+                    </select>
+                </div>
+                <div class="campoForm">
+                    <label>Status:</label>
+                    <select name="f_status" id="f_status">
+                        <option value="A">Ativo</option>
+                        <option value="I">Inativo</option>
+                    </select>         
+                </div>
+                <div class="campoForm">
+                    <label>Foto:</label>
+                    <input type="file" name="f_foto" id="f_foto" accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <div class="campoForm2">
+                    <img src="#" alt="Foto escolhida" id="img_foto" class="img_foto">
+                </div>
+                <div class="campoForm">
+                    <label>Telefones:</label>
+                    <input type="text" id="f_telefone" name="f_telefone">
+                    <div id="telefones" class="telefones">
+                        <!-- <div class="tel">
+                            <div class="numTel">(51)123456789</div>
+                            <div class="delTel">
+                                <img src="../imgs/deletar.svg" alt="Del">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="rodapePopup">
+                <button id="btn_gravarPopup" class="btn_comandoPopup">Gravar</button>
+                <button id="btn_cancelarPopup" class="btn_comandoPopup">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="areaGrid" id="areaGrid">
+        <div id="grid" class="grid">
+                <div class="tituloGrid" id="tituloGrid">
+                    <div class="colunaTituloGrid c1">ID</div>
+                    <div class="colunaTituloGrid c2">Nome</div>
+                    <div class="colunaTituloGrid c3">Tipo</div>
+                    <div class="colunaTituloGrid c4">Status</div>
+                    <div class="colunaTituloGrid c5">Operações</div>
+                </div>
+                <div class="dadosGrid" id="dadosGrid">
+                    <!-- <div class="linhaGrid">
+                        <div class="colunaLinhaGrid c1">ID</div>
+                        <div class="colunaLinhaGrid c2">Nome</div>
+                        <div class="colunaLinhaGrid c3">Tipo</div>
+                        <div class="colunaLinhaGrid c4">Status</div>
+                        <div class="colunaLinhaGrid c5">Operações</div>
+                    </div> -->
+                </div>
+        </div>
+    </div>
+
+    <script src="../../estoque_geral.js"></script>
+    <script src="colaboradores.js"></script>
+</body>
+</html>
