@@ -176,7 +176,7 @@ const criarLinha = (el) =>{
 
             const divc3 = document.createElement('div')
             divc3.setAttribute('class', 'colunaLinhaGrid c3')
-            divc3.innerHTML = el.n_tipousuario_tipousuario
+            divc3.innerHTML = el.n_tipopessoa_tipopessoa
             divLinha.appendChild(divc3)
 
             const divc4 = document.createElement('div')
@@ -236,7 +236,7 @@ const criarLinha = (el) =>{
                     // console.log(res);
                     btn_gravarPopup.setAttribute('data-idcolab', id)
                     f_nome.value = res[0].s_nome_usuario
-                    f_tipoColab.value = res[0].n_tipousuario_tipousuario
+                    f_tipoColab.value = res[0].n_tipopessoa_tipopessoa
                     f_status.value = res[0].c_status_usuario
                     img_foto.src = res[0].s_foto_usuario
                     novoColaborador.classList.remove('ocultarPopup')
@@ -268,11 +268,13 @@ const endpoint_tiposcolab = `${serv}/tiposcolab`
 fetch(endpoint_tiposcolab)
 .then(res=>res.json())
 .then(res=>{
+    console.log(res);
     f_tipoColab.innerHTML = ''
     res.forEach(el => {
+        console.log(el);
         const opt = document.createElement('option')
-        opt.setAttribute('value', el.n_tipousuario_tipousuario)
-        opt.innerHTML = el.s_desc_tipousuario
+        opt.setAttribute('value', el.n_tipopessoa_tipopessoa)
+        opt.innerHTML = el.s_desc_tipopessoa
         f_tipoColab.appendChild(opt)
     });
     // console.log(res);
@@ -317,7 +319,7 @@ btn_gravarPopup.addEventListener('click', (evt)=>{
     const dados = {
         n_usuario_usuario: evt.target.dataset.idcolab,
         s_nome_usuario: f_nome.value,
-        n_tipousuario_tipousuario: f_tipoColab.value,
+        n_tipopessoa_tipopessoa: f_tipoColab.value,
         c_status_usuario: f_status.value,
         numtelefones: numTels,
         s_foto_usuario: img_foto.getAttribute('src')
