@@ -1,0 +1,62 @@
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+body{
+    overflow: hidden !important;
+}
+
+.c1{
+    width: 30px;
+}
+.c2{
+    width: 250px;
+}
+.c3{
+    width: 50px;
+}
+.c4{
+    width: 120px;
+}
+
+#grid_novosContatosForn{
+    margin: auto;
+}
+
+.c1_lcf{
+    /* background-color: cyan; */
+    width: 30px;
+}
+.c2_lcf{
+    /* background-color: yellow; */
+    width: 350px;
+}
+.c3_lcf{
+    /* background-color: magenta; */
+    width: 150px;
+}
+
+.img_foto{
+    width: 75px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* .icone_op{
+    border: 1px solid black;
+} */
+
+
+#f_id{
+    cursor: not-allowed;
+}
