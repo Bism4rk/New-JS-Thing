@@ -37,7 +37,7 @@ const btn_listarTodos = document.querySelector('#btn_listarTodos')
 const serv = sessionStorage.getItem('servidor_nodered')
 
 btn_listarTodos.addEventListener('click', (evt)=>{
-    carregarTodosProds()
+    carregarTodosColabs()
 })
 
 f_filtragem.addEventListener('keyup', (evt)=>{
@@ -154,12 +154,13 @@ let modoJanela = "n"
 // n = novo colaborador
 // e = editar colaborador
 
-const carregarTodosProds = () =>{
-    const endpoint_todosprods = `${serv}/todosprods`
+const carregarTodosColabs = () =>{
+    const endpoint_todaspessoas = `${serv}/todaspessoas`
 
-    fetch(endpoint_todosprods)
+    fetch(endpoint_todaspessoas)
     .then(res=>res.json())
     .then(res=>{
+        // console.log(res)
         dadosGrid.innerHTML = ""
         res.forEach(el => {
             criarLinha(el)
@@ -174,71 +175,61 @@ const criarLinha = (el) =>{
 
             const divc1 = document.createElement('div')
             divc1.setAttribute('class', 'colunaLinhaGrid c1')
-            divc1.innerHTML = el.n_cod_produto
+            divc1.innerHTML = el.n_pessoa_pessoa
             divLinha.appendChild(divc1)
 
             const divc2 = document.createElement('div')
             divc2.setAttribute('class', 'colunaLinhaGrid c2')
-            divc2.innerHTML = el.n_tipoproduto_tipoproduto 
+            divc2.innerHTML = el.s_nome_pessoa
             divLinha.appendChild(divc2)
 
             const divc3 = document.createElement('div')
             divc3.setAttribute('class', 'colunaLinhaGrid c3')
-            divc3.innerHTML = el.s_desc_produto
+            divc3.innerHTML = el.n_tipopessoa_tipopessoa
             divLinha.appendChild(divc3)
 
             const divc4 = document.createElement('div')
             divc4.setAttribute('class', 'colunaLinhaGrid c4')
-            divc4.innerHTML = el.n_fornecedor_fornecedor 
+            divc4.innerHTML = el.c_status_pessoa
             divLinha.appendChild(divc4)
 
             const divc5 = document.createElement('div')
             divc5.setAttribute('class', 'colunaLinhaGrid c5')
-            divc5.innerHTML = el.n_qtde_produto 
             divLinha.appendChild(divc5)
 
-            const divc6 = document.createElement('div')
-            divc6.setAttribute('class', 'colunaLinhaGrid c6')
-            divc6.innerHTML = el.c_status_produto 
-            divLinha.appendChild(divc6)
-
-            const divc7 = document.createElement('div')
-            divc7.setAttribute('class', 'colunaLinhaGrid c7')
-            divLinha.appendChild(divc7)
-
             const img_status = document.createElement('img')
-            if(el.c_status_produto == 'A'){
+            if(el.c_status_pessoa == 'A'){
                 img_status.setAttribute('src','../imgs/on.svg')
             }else{
                 img_status.setAttribute('src','../imgs/off.svg')
             }
             
             img_status.setAttribute('class', 'icone_op')
-            img_status.setAttribute('data-codprod', el.n_cod_produto)
+            img_status.setAttribute('data-idcolab', el.n_pessoa_pessoa)
             img_status.addEventListener('click', (evt)=>{
-                const codprod = evt.target.dataset.codprod
+                const idcolab = evt.target.dataset.idcolab
                 if(evt.target.getAttribute('src') == "../imgs/on.svg"){
-                    const endpoint_mudarStatus = `${serv}/mudarStatusColab/${codprod}/I`
+                    const endpoint_mudarStatus = `${serv}/mudarStatusColab/${idcolab}/I`
                     fetch(endpoint_mudarStatus)
                     .then(res=>{
                         if(res.status == 200){
                             evt.target.setAttribute('src', '../imgs/off.svg')
-                            carregarTodosProds()
+                            carregarTodosColabs()
                         }
                         
                     })
                 } else{
-                    const endpoint_mudarStatus = `${serv}/mudarStatusColab/${codprod}/A`
+                    const endpoint_mudarStatus = `${serv}/mudarStatusColab/${idcolab}/A`
                     fetch(endpoint_mudarStatus)
                     .then(res=>{
                         if(res.status == 200){
                             evt.target.setAttribute('src', '../imgs/on.svg')
-                            carregarTodosProds()
+                            carregarTodosColabs()
                         }
                     })
                 }
             })
-            divc7.appendChild(img_status)
+            divc5.appendChild(img_status)
 
             const img_editar = document.createElement('img')
             img_editar.setAttribute('src','../imgs/editar2.svg')
@@ -252,7 +243,7 @@ const criarLinha = (el) =>{
                 .then(res=>res.json()) 
                 .then(res=>{
                     console.log(res);
-                    btn_gravarPopup.setAttribute('data-codprod', id)
+                    btn_gravarPopup.setAttribute('data-idcolab', id)
                     f_nome.value = res[0].s_nome_pessoa
                     f_tipoprod.value = res[0].n_tipopessoa_tipopessoa
                     f_status.value = res[0].c_status_pessoa
@@ -275,17 +266,17 @@ const criarLinha = (el) =>{
                     }) 
                     });
             })
-            divc7.appendChild(img_editar)
+            divc5.appendChild(img_editar)
 
             const img_remover = document.createElement('img')
             img_remover.setAttribute('src','../imgs/deletar2.svg')
             img_remover.setAttribute('class', 'icone_op')
-            divc7.appendChild(img_remover)
+            divc5.appendChild(img_remover)
 
             dadosGrid.appendChild(divLinha)
 }
 
-carregarTodosProds()
+carregarTodosColabs()
 
 const endpoint_tiposprod = `${serv}/tiposprod`
 fetch(endpoint_tiposprod)
@@ -301,20 +292,6 @@ fetch(endpoint_tiposprod)
 })
 
 // make it into a function maybe????? idk though works fine as is
-
-
-const endpoint_fornprod = `${serv}/fornprod`
-fetch(endpoint_fornprod)
-.then(res=>res.json())
-.then(res=>{
-    f_fornprod.innerHTML = ''
-    res.forEach(el => {
-        const opt = document.createElement('option')
-        opt.setAttribute('value', el.n_fornecedor_fornecedor)
-        opt.innerHTML = el.s_desc_fornecedor
-        f_fornprod.appendChild(opt)
-    });
-})
 
 btn_pesquisar.addEventListener('click', (evt)=>{
     pesquisa.classList.remove('ocultarPopup')
@@ -355,26 +332,31 @@ btn_cancelarPopup.addEventListener('click', (evt)=>{
 })
 
 btn_gravarPopup.addEventListener('click', (evt)=>{
+    const tels = [...document.querySelectorAll('.novoTel')]
+    let numTels = []
+    tels.forEach(el => {
+        numTels.push(el.innerHTML)
+    });
     const dados = {
-        n_cod_produto: f_codprod.value,
-        n_tipoproduto_tipoproduto: f_tipoprod.value,
-        s_desc_produto: f_descprod.value,
-        n_fornecedor_fornecedor: f_fornprod.value,
-        n_qtde_produto: f_qtdeprod.value,
-        c_status_produto: f_statusprod.value
+        n_pessoa_pessoa: evt.target.dataset.idcolab,
+        s_nome_pessoa: f_nome.value,
+        n_tipopessoa_tipopessoa: f_tipoprod.value,
+        c_status_pessoa: f_status.value,
+        numtelefones: numTels,
+        s_foto_pessoa: img_foto.getAttribute('src')
     }
     const cab = {
         method: 'post',
         body: JSON.stringify(dados)
     }
-    let endpoint_novooueditarprod = null
+    let endpoint_novooueditarcolab = null
     if(modoJanela == "n"){
-        endpoint_novooueditarprod = `${serv}/novoprod`
+        endpoint_novooueditarcolab = `${serv}/novocolab`
     } else{
-        endpoint_novooueditarprod = `${serv}/editprod`
+        endpoint_novooueditarcolab = `${serv}/editcolab`
     }
     // console.log(dados);
-    fetch(endpoint_novooueditarprod, cab)
+    fetch(endpoint_novooueditarcolab, cab)
     .then(res=>{
         if(res.status == 200){
             if(modoJanela == "n"){
@@ -394,14 +376,14 @@ btn_gravarPopup.addEventListener('click', (evt)=>{
                     }
                 }
                 Cxmsg.mostrar(config)
-                f_codprod.value = ""
+                f_nome.value = ""
                 f_tipoprod.value = ""
-                f_descprod.value = ""
-                f_fornprod.value = ""
-                f_qtdeprod.value = ""
-                f_statusprod.value = ""
+                f_status.value = ""
+                f_foto.value = ""
+                img_foto.setAttribute('src', '#')
+                telefones.innerHTML = ""
                 
-                carregarTodosProds()
+                carregarTodosColabs()
             }
             else{
                 const config={
@@ -426,7 +408,7 @@ btn_gravarPopup.addEventListener('click', (evt)=>{
                 f_foto.value = ""
                 img_foto.setAttribute('src', '#')
                 telefones.innerHTML = ""
-                carregarTodosProds()
+                carregarTodosColabs()
             }
             // novoProduto.classList.add('ocultarPopup')
         } else{
