@@ -247,33 +247,20 @@ const criarLinha = (el) =>{
                 const id = evt.target.parentNode.parentNode.firstChild.innerHTML;
                 modoJanela = "e"
                 tituloPopup2.innerHTML = "Editar Produto"
-                let endpoint = `${serv}/dadoscolab/${id}`
+                let endpoint = `${serv}/dadosprod/${id}`
                 fetch(endpoint)
                 .then(res=>res.json()) 
                 .then(res=>{
                     console.log(res);
                     btn_gravarPopup.setAttribute('data-codprod', id)
-                    f_nome.value = res[0].s_nome_pessoa
-                    f_tipoprod.value = res[0].n_tipopessoa_tipopessoa
-                    f_status.value = res[0].c_status_pessoa
-                    img_foto.src = res[0].s_foto_pessoa
+                    f_codprod.value = res[0].n_cod_produto 
+                    f_tipoprod.value = res[0].n_tipoproduto_tipoproduto 
+                    f_descprod.value = res[0].s_desc_produto
+                    f_fornprod.value = res[0].n_fornecedor_fornecedor
+                    f_qtdeprod.value = res[0].n_qtde_produto
+                    f_statusprod.value = res[0].c_status_produto
                     novoProduto.classList.remove('ocultarPopup')
-                    if(res[0].s_foto_pessoa == "#" || res[0].s_foto_pessoa == ""){
-                        img_foto.classList.add('esconderElemento')
-                    } else{
-                        img_foto.classList.remove('esconderElemento')
-                    }
                 })
-                endpoint = `${serv}/telefonescolab/${id}`
-                fetch(endpoint)
-                .then(res=>res.json()) 
-                .then(res=>{
-                    // console.log(res);
-                    telefones.innerHTML = ""
-                    res.forEach(el=> {
-                        criarCaixaTel(el.s_numero_telefone, el.n_telefone_telefone, "e")
-                    }) 
-                    });
             })
             divc7.appendChild(img_editar)
 
