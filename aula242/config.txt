@@ -1,0 +1,4 @@
+{
+    "servidor_nodered": "http://localhost:1880",
+    "versao": "Alpha 0.0.8"
+}
