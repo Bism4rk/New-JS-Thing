@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estoque_geral.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Aula 252 de JavaScript - Estoque Backoffice</title>
+</head>
+<body>
+    <h1 class="text" style="color: blue;">LOGIN</h1>
+    <h1 class="text" style="color: blue;">LOGIN</h1>
+    <h1 class="text" style="color: green;">LOGIN</h1>
+    <h1 class="text" style="color: green;">LOGIN</h1>
+    <h1 class="text" style="color: yellow;">LOGIN</h1>
+    <h1 class="text" style="color: yellow;">LOGIN</h1>
+
+    <div class="popup ocultarPopup" id="primeiroAcesso">
+        <div class="janelaPopup">
+            <input type="hidden" id="idDefSenha" value="-1">
+            <div class="tituloPopup">
+                <div id="tituloPopup">Definição de senha</div>
+                <img src="imgs/fechar.svg" alt="Fechar popup" class="btn_janelaOper" id="btn_fecharPopupDefSenha">
+            </div>
+            <div class="corpoPopup">
+                <div class="campoForm">
+                    <label>Email:</label>
+                    <input type="email" name="f_emailDefSenha" id="f_emailDefSenha" readonly>
+                </div>
+                <div class="campoForm">
+                    <label>Senha:</label>
+                    <input type="password" name="f_senha1" id="f_senha1">
+                </div>
+                <div class="campoForm">
+                    <label>Confirmar senha:</label>
+                    <input type="password" name="f_senha2" id="f_senha2">
+                </div>
+            </div>
+            <div class="rodapePopup">
+                <button id="btn_gravarSenha" class="btn_comandoPopup">Gravar senha</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="login">
+        <div class="janelaPopup">
+            <div class="tituloPopup">
+                <div id="tituloPopup">Login</div>
+                <img src="imgs/fechar.svg" alt="Fechar popup" class="btn_janelaOper" id="btn_fecharPopupLogin">
+            </div>
+            <div class="corpoPopup">
+                <div class="campoForm">
+                    <label>Email:</label>
+                    <input type="email" name="f_email" id="f_email">
+                </div>
+                <div class="campoForm">
+                    <label>Senha:</label>
+                    <input type="password" name="f_senha" id="f_senha">
+                </div>
+            </div>
+                <div class="rodapePopup">
+                    <button id="btn_login" class="btn_comandoPopup">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../estoque_geral.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

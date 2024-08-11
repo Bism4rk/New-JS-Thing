@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.campoLogin{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.campoLogin input, .campoLogin select{
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.text{
+    cursor: pointer;
+}
